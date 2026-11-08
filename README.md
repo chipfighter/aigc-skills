@@ -41,6 +41,7 @@
 
 - 四个原技能以 2026-11-04 正在使用的本地版本为准，连同参考文件和已有配置原样收纳。
 - `image-prompt`、`image-spec-check` 未改正文；`video-prompt`、`storyboard-preview` 只在末尾增加「相关技能」索引，原有内容完整保留。
+- 2026-11-08：经确认修改 `video-prompt`、`storyboard-preview`、`image-prompt`、`natural-emotional-performance` 正文，补充按镜头角度补面部图、默认全能参考与首帧选择、表情起点和对白口型。
 - 旧 GitHub 上的 `image-spec-check` 比本地版旧；本次采用本地最新版，不将旧远端内容覆盖回来。
 - 两个新技能采用已经确认的精简版，不依赖原教程视频运行。
 - 之后维护四个原技能时，保留正文；需要与新技能衔接时只添加必要索引。若要改动正文，先明确提出具体修改。
