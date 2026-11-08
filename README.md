@@ -43,6 +43,7 @@
 - `image-prompt`、`image-spec-check` 未改正文；`video-prompt`、`storyboard-preview` 只在末尾增加「相关技能」索引，原有内容完整保留。
 - 2026-11-08：经确认修改 `video-prompt`、`storyboard-preview`、`image-prompt`、`natural-emotional-performance` 正文，补充按镜头角度补面部图、默认全能参考与首帧选择、表情起点和对白口型。
 - 2026-11-09：《如梦令》试跑后经确认修改 `storyboard-preview`（预览画风默认和成片一致、写实预览先做设定图和场景图、两格竖版画布、表演强度、分镜表空间自查）、`video-prompt`（左右与路线、光线方向、运动方向、景别、看得见的情绪变化、不摆姿势的结尾拍、不稳处的动作、动作量、抽帧看片）和 `image-prompt`（新接口先试一张）。
+- 2026-11-09：经确认修改 `video-prompt`，交付提示词前先附几行大白话的"这段会演出什么"。
 - 旧 GitHub 上的 `image-spec-check` 比本地版旧；本次采用本地最新版，不将旧远端内容覆盖回来。
 - 两个新技能采用已经确认的精简版，不依赖原教程视频运行。
 - 之后维护四个原技能时，保留正文；需要与新技能衔接时只添加必要索引。若要改动正文，先明确提出具体修改。
