@@ -10,7 +10,7 @@
 |---|---|---|---|
 | 生图摄影 | 把画面想法转成摄影语言，按需要生成静帧或关键帧 | [image-prompt](skills/image-prompt/SKILL.md) | [ZIP](downloads/image-prompt.zip) |
 | 视频提示词 | 讨论演出和摄影，把已确定的设计写成视频提示词 | [video-prompt](skills/video-prompt/SKILL.md) | [ZIP](downloads/video-prompt.zip) |
-| 分镜预览 | 文字分镜、预览图、带声音和运镜示意的预览视频 | [storyboard-preview](skills/storyboard-preview/SKILL.md) | [ZIP](downloads/storyboard-preview.zip) |
+| 分镜预览 | 文字分镜、SVG 构图明暗小样、预览图、带声音和运镜示意的预览视频或草图预览 | [storyboard-preview](skills/storyboard-preview/SKILL.md) | [ZIP](downloads/storyboard-preview.zip) |
 | 生图清单与核对 | 保存当前要求、逐项核对和管理图片版本 | [image-spec-check](skills/image-spec-check/SKILL.md) | [ZIP](downloads/image-spec-check.zip) |
 | 白模动画 | 三维空间、人物路线、运镜、姿态与动作交接预演 | [white-model-animation](skills/white-model-animation/SKILL.md) | [ZIP](downloads/white-model-animation.zip) |
 | 真实情绪表演 | 强情绪下的身体、声音、停顿、抢话、说不出口与双方反应 | [natural-emotional-performance](skills/natural-emotional-performance/SKILL.md) | [ZIP](downloads/natural-emotional-performance.zip) |
@@ -23,7 +23,7 @@
 
 - 画面与静帧交给 `image-prompt`，具体细节配合 `image-spec-check`。
 - 视频片段的设计与提示词交给 `video-prompt`。
-- 需要先看机位、构图和节奏时，使用 `storyboard-preview`。
+- 需要先看机位、构图和节奏时，使用 `storyboard-preview`；关键镜头先画 SVG 构图小样，再出图。
 - 需要进一步设计强情绪下的真实感时，配合 `natural-emotional-performance`。
 - 需要检验连续空间、严格路线、遮挡或动作交接时，使用 `white-model-animation`。
 
@@ -44,6 +44,7 @@
 - 2026-11-08：经确认修改 `video-prompt`、`storyboard-preview`、`image-prompt`、`natural-emotional-performance` 正文，补充按镜头角度补面部图、默认全能参考与首帧选择、表情起点和对白口型。
 - 2026-11-09：《如梦令》试跑后经确认修改 `storyboard-preview`（预览画风默认和成片一致、写实预览先做设定图和场景图、两格竖版画布、表演强度、分镜表空间自查）、`video-prompt`（左右与路线、光线方向、运动方向、景别、看得见的情绪变化、不摆姿势的结尾拍、不稳处的动作、动作量、抽帧看片）和 `image-prompt`（新接口先试一张）。
 - 2026-11-09：经确认修改 `video-prompt`，交付提示词前先附几行大白话的"这段会演出什么"。
+- 2026-11-12：经确认修改 `storyboard-preview`：新增 `references/composition-sketch.md`（SVG 构图明暗小样：什么时候画、画什么不画什么、一张只讲一件事、画完自查、五种常用构图骨架、怎么附给生图模型和测试结论）；预览形式增加"草图预览"（用小样代替预览图剪视频）；"导演台预览"指三维灰模预演，交给 `white-model-animation`。
 - 旧 GitHub 上的 `image-spec-check` 比本地版旧；本次采用本地最新版，不将旧远端内容覆盖回来。
 - 两个新技能采用已经确认的精简版，不依赖原教程视频运行。
 - 之后维护四个原技能时，保留正文；需要与新技能衔接时只添加必要索引。若要改动正文，先明确提出具体修改。
