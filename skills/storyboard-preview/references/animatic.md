@@ -67,7 +67,7 @@ ffmpeg -y -i A1_raw.mp4 -vf "crop=iw/1.2:ih/1.2:x='(iw-ow)*t/T':y='(ih-oh)/2',sc
 | 推进式转场 | xfade `zoomin` |
 | 匹配剪辑 | 硬切；前后两格的主体形状和位置要对上，对不上就调裁切 |
 
-xfade 的 offset 是前一段开始转场的时间点，等于前面所有片段的时长之和减去之前所有转场的重叠时长，再减去本次转场的时长。每做一次转场，总时长会少一个转场时长，所以分配镜头时长时把重叠算进去，不然后面的镜头会和音乐对不上。
+xfade 的 offset 是前一段开始转场的时间点，等于前面所有片段的时长之和减去之前所有转场的重叠时长，再减去本次转场的时长。每做一次转场，总时长会少一个转场时长，所以分配镜头时长时把重叠算进去，有对乐要求时，再检查后续镜头是否仍对上对应的音乐节点。
 
 ```bash
 # A1（4 秒）叠化 1 秒接 A2（3 秒）：offset = 4 - 1 = 3
@@ -92,7 +92,9 @@ printf '镜头快速环绕 180°，从她背后转到正面' > A2_note.txt
 ffmpeg -y -i A2.mp4 -vf "drawtext=fontfile=font.ttc:textfile=A2_label.txt:fontsize=24:fontcolor=white:box=1:boxcolor=black@0.5:boxborderw=8:x=24:y=24,drawtext=fontfile=font.ttc:textfile=A2_note.txt:fontsize=30:fontcolor=white:box=1:boxcolor=black@0.55:boxborderw=12:x=(w-text_w)/2:y=h-text_h-40,format=yuv420p" A2_noted.mp4
 ```
 
-## 6. 配乐
+## 6. 声音
+
+按已定方案使用现有对白、现场声或配乐素材。只有方案需要配乐时才加音乐；无可用音频时可以交付静音预览。下面的命令用于画面原本无声、只需加已定配乐的情况，先确认选取的音乐段覆盖整段画面。
 
 ```bash
 # 从原曲 0:12 开始取音乐，长度跟着画面
@@ -101,9 +103,9 @@ ffmpeg -y -i preview_silent.mp4 -ss 12 -i song.mp3 -map 0:v -map 1:a -c:v copy -
 
 ## 7. 交付前自查
 
-- 用 `ffprobe` 看总时长，和分镜表、音乐段落对得上
+- 用 `ffprobe` 看总时长，和分镜表对得上，有对乐要求时再核对音乐段落
 - 在每个转场点前后，以及每个镜头中间各抽一帧（`ffmpeg -ss 秒数 -i 预览.mp4 -frames:v 1 check.png`），亲自看一眼：裁切对不对、运镜方向对不对、转场有没有用错、标注和备注看不看得清
-- 按正常速度播放：不要为了对上音乐把某段压得很快，时长不够就少放一格
+- 按正常速度播放，保持镜头动作节奏。有对乐要求且时长不够时，可以少放一格
 
 ## 注意
 
