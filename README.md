@@ -11,7 +11,7 @@
 | 生图摄影 | 把画面想法转成摄影语言，按需要生成静帧或关键帧 | [image-prompt](skills/image-prompt/SKILL.md) | [ZIP](downloads/image-prompt.zip) |
 | AIGC 创作看片学习 | 设计镜头前问清表达，推荐供自己观看的参考片段，并讨论观众视点、信息揭示和镜头衔接 | [aigc-learning-skill](skills/aigc-learning-skill/SKILL.md) | [ZIP](downloads/aigc-learning-skill.zip) |
 | 视频提示词 | 讨论演出和摄影，把已确定的设计写成视频提示词 | [video-prompt](skills/video-prompt/SKILL.md) | [ZIP](downloads/video-prompt.zip) |
-| 分镜预览 | 文字分镜、SVG 构图明暗小样、预览图、带声音和运镜示意的预览视频或草图预览 | [storyboard-preview](skills/storyboard-preview/SKILL.md) | [ZIP](downloads/storyboard-preview.zip) |
+| 分镜预览 | 文字分镜、SVG 构图明暗小样、预览图或草图预览，复杂空间交给白模做导演台预览 | [storyboard-preview](skills/storyboard-preview/SKILL.md) | [ZIP](downloads/storyboard-preview.zip) |
 | 生图清单与核对 | 保存当前要求、逐项核对和管理图片版本 | [image-spec-check](skills/image-spec-check/SKILL.md) | [ZIP](downloads/image-spec-check.zip) |
 | 白模动画 | 三维空间、人物路线、运镜、姿态与动作交接预演 | [white-model-animation](skills/white-model-animation/SKILL.md) | [ZIP](downloads/white-model-animation.zip) |
 | 真实情绪表演 | 强情绪下的身体、声音、停顿、抢话、说不出口与双方反应 | [natural-emotional-performance](skills/natural-emotional-performance/SKILL.md) | [ZIP](downloads/natural-emotional-performance.zip) |
@@ -36,7 +36,13 @@
 
 使用支持技能加载的客户端时，按它的方式安装所需目录；ZIP 内保留技能目录和配套资料。没有技能加载功能的环境，也可以读取相关指令和资料，但不会因此自动获得工具能力。
 
-本仓库上传和维护不会自动覆盖本地安装的副本，本地更新另行安排。
+本机的安装目录用目录链接（junction）指向本仓库的 `skills/`，改了仓库里的文件，Claude Code 和 Codex 下次加载技能时就会用上：
+
+- `~/.claude/skills/<技能>`：7 个技能，Claude Code 使用。
+- `~/.agents/skills/<技能>`：除 `image-spec-check` 外的 6 个，Codex 使用。
+- `~/.codex/skills/image-spec-check`：Codex 使用。
+
+链接指向当前检出的分支，切到别的分支，本机加载的技能也跟着变。
 
 ## 迁移与维护约定
 
@@ -48,11 +54,13 @@
 - 2026-11-12：经确认修改 `storyboard-preview`：新增 `references/composition-sketch.md`（SVG 构图明暗小样：什么时候画、画什么不画什么、一张只讲一件事、画完自查、五种常用构图骨架、怎么附给生图模型和测试结论）；预览形式增加"草图预览"（用小样代替预览图剪视频）；"导演台预览"指三维灰模预演，交给 `white-model-animation`。
 - 2026-11-13：同步 `video-prompt`、`storyboard-preview` 和 `image-prompt`。明确全能参考、关键帧和首尾帧的选用条件。只在构图必须准确时用 SVG 小样辅助出图。人物通常用正面照和遮挡面部的全身多视图，头部近景按镜头补充，所需角度可合在一张图中。
 - 2026-11-13：同步本地最新版。视频提示词在动笔前先沟通演法，分镜补充人物处境、情绪和反应，移除未验证的提示词与江边分镜样例。构图骨架按当前镜头取用，走位按实际空间判断，预览配乐按已定声音设计处理。
+- 2026-11-17：同步本机安装的最新版。`video-prompt` 新增 `references/model-pitfalls.md`（Seedance 2.5 / 可灵 4.0 易错点和看片检查清单），补充关键帧遮脸、连续运镜的镜内节点和摄影机对表演的响应；`storyboard-preview` 去掉预览视频（删除 `references/animatic.md`），预览形式改为预览图、草图预览和导演台预览；`image-spec-check` 补充逐人找手；`image-prompt` 补充关键帧遮脸。
+- 2026-11-17：经确认统一两处冲突。`image-prompt` 未指定生图工具时先问用户，与 `storyboard-preview` 一致；`aigc-learning-skill` 对已聊过表达的镜头改为复述确认，并和其他技能要问的事合成一条消息。
 - 旧 GitHub 上的 `image-spec-check` 比本地版旧；本次采用本地最新版，不将旧远端内容覆盖回来。
 - 两个新技能采用已经确认的精简版，不依赖原教程视频运行。
 - 之后维护四个原技能时，保留正文；需要与新技能衔接时只添加必要索引。若要改动正文，先明确提出具体修改。
 - `skills/` 是内容来源。修改后运行 `scripts/package.py`，重新生成 `downloads/`，不手动维护另一份正文。
-- GitHub 更新可以通过网页或接口完成，不要求本地 Git 命令。仓库仍保留 GitHub 的修改历史。
+- 本地工作副本在 `D:\Study\wjj_projects\active\aigc-skills`，在分支上修改，提 PR 合并到 main。也可以继续在 GitHub 网页上改，改完在本地 `git pull`。
 
 本次归并的原仓库：`image-spec-check`、`storyboard-preview-skill`、`video-prompt-skill`、`image-prompt-skill`。
 
