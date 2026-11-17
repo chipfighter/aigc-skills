@@ -9,6 +9,7 @@
 | 技能 | 用途 | 内容 | 单独下载 |
 |---|---|---|---|
 | 生图摄影 | 把画面想法转成摄影语言，按需要生成静帧或关键帧 | [image-prompt](skills/image-prompt/SKILL.md) | [ZIP](downloads/image-prompt.zip) |
+| AIGC 创作看片学习 | 设计镜头前问清表达，推荐供自己观看的参考片段，并讨论观众视点、信息揭示和镜头衔接 | [aigc-learning-skill](skills/aigc-learning-skill/SKILL.md) | [ZIP](downloads/aigc-learning-skill.zip) |
 | 视频提示词 | 讨论演出和摄影，把已确定的设计写成视频提示词 | [video-prompt](skills/video-prompt/SKILL.md) | [ZIP](downloads/video-prompt.zip) |
 | 分镜预览 | 文字分镜、SVG 构图明暗小样、预览图、带声音和运镜示意的预览视频或草图预览 | [storyboard-preview](skills/storyboard-preview/SKILL.md) | [ZIP](downloads/storyboard-preview.zip) |
 | 生图清单与核对 | 保存当前要求、逐项核对和管理图片版本 | [image-spec-check](skills/image-spec-check/SKILL.md) | [ZIP](downloads/image-spec-check.zip) |
