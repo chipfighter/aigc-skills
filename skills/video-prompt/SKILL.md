@@ -92,3 +92,4 @@ description: 与用户讨论视频片段的意图、表演和摄影，把聊定�
 
 - 需要设计强情绪下的真实表演时，配合 [真实情绪表演](../natural-emotional-performance/SKILL.md)。
 - 需要制作三维白模或灰模预演时，配合 [白模动画](../white-model-animation/SKILL.md)。
+- 视频做好后需要补音效、叠加声层或配合画面混音时，使用 [后期音效制作](../post-production-sound/SKILL.md)，并交接画面和已定的声音触发点。

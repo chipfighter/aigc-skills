@@ -1,6 +1,6 @@
 # AIGC Skills
 
-我自己的 AIGC 创作技能库：把想表达的画面、人物表演和镜头，逐步聊成可执行的设计、提示词与预演。
+我自己的 AIGC 创作技能库。把想表达的画面、人物表演和镜头逐步聊成可执行的设计、提示词与预演，再按成片需要设计后期音效。
 
 这里统一保存当前使用的技能，方便查看、维护和按需下载。以自己的实际工作方式为先；没有包装成 plugin，也没有为了平台通用性改写原有正文。
 
@@ -15,6 +15,7 @@
 | 生图清单与核对 | 保存当前要求、逐项核对和管理图片版本 | [image-spec-check](skills/image-spec-check/SKILL.md) | [ZIP](downloads/image-spec-check.zip) |
 | 白模动画 | 三维空间、人物路线、运镜、姿态与动作交接预演 | [white-model-animation](skills/white-model-animation/SKILL.md) | [ZIP](downloads/white-model-animation.zip) |
 | 真实情绪表演 | 强情绪下的身体、声音、停顿、抢话、说不出口与双方反应 | [natural-emotional-performance](skills/natural-emotional-performance/SKILL.md) | [ZIP](downloads/natural-emotional-performance.zip) |
+| 后期音效制作 | 按画面设计声音事件，分层生成或选取音效，再贴画混音 | [post-production-sound](skills/post-production-sound/SKILL.md) | [ZIP](downloads/post-production-sound.zip) |
 
 [下载完整仓库](https://github.com/chipfighter/aigc-skills/archive/refs/heads/main.zip)
 
@@ -27,20 +28,20 @@
 - 需要先看机位、构图和节奏时，使用 `storyboard-preview`。独立出图或制作关键帧时，画面布局必须稳定复现才考虑用 SVG 构图小样。
 - 需要进一步设计强情绪下的真实感时，配合 `natural-emotional-performance`。
 - 需要检验连续空间、严格路线、遮挡或动作交接时，使用 `white-model-animation`。
+- 需要给分镜、粗剪或成片设计和制作后期音效时，使用 `post-production-sound`。同一个动作可以用几层声音，环境声和余响也可以跨镜头。
 
-这些技能保留原有协作关系。视频提示词和分镜预览的文件末尾，各有一小节指向两个新技能的索引。
+视频提示词和分镜预览的文件末尾有相关技能索引。
 
 ## 使用条件
 
-技能是给 agent 的工作指引，实际能力取决于当前环境。生图需要可用的生图工具；图片核对与二维预览会用到文件读写及 ffmpeg；实际制作白模动画需要可用的三维工具。
+技能是给 agent 的工作指引，实际能力取决于当前环境。生图需要可用的生图工具；图片核对与二维预览会用到文件读写及 ffmpeg；实际制作白模动画需要可用的三维工具。生成音效和混音需要当前环境具备相应的音频工具。
 
 使用支持技能加载的客户端时，按它的方式安装所需目录；ZIP 内保留技能目录和配套资料。没有技能加载功能的环境，也可以读取相关指令和资料，但不会因此自动获得工具能力。
 
 本机的安装目录用目录链接（junction）指向本仓库的 `skills/`，改了仓库里的文件，Claude Code 和 Codex 下次加载技能时就会用上：
 
-- `~/.claude/skills/<技能>`：7 个技能，Claude Code 使用。
-- `~/.agents/skills/<技能>`：除 `image-spec-check` 外的 6 个，Codex 使用。
-- `~/.codex/skills/image-spec-check`：Codex 使用。
+- Claude Code 使用 `~/.claude/skills/<技能>`。
+- Codex 的 `image-spec-check` 使用 `~/.codex/skills/image-spec-check`，其余技能使用 `~/.agents/skills/<技能>`。
 
 链接指向当前检出的分支，切到别的分支，本机加载的技能也跟着变。
 

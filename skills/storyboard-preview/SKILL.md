@@ -110,3 +110,4 @@ description: 视频前期的副导演：把聊定的创意做成文字分镜、S
 
 - 需要设计强情绪下的真实表演时，配合 [真实情绪表演](../natural-emotional-performance/SKILL.md)。
 - 需要制作三维白模或灰模预演时，配合 [白模动画](../white-model-animation/SKILL.md)。
+- 用分镜提前设计后期音效时，使用 [后期音效制作](../post-production-sound/SKILL.md)，交接已定的空间、动作、切镜和声音触发点。
