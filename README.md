@@ -74,7 +74,7 @@
 - 两个新技能采用已经确认的精简版，不依赖原教程视频运行。
 - 之后维护四个原技能时，保留正文；需要与新技能衔接时只添加必要索引。若要改动正文，先明确提出具体修改。
 - `skills/` 是内容来源。修改后运行 `scripts/package.py`，重新生成 `downloads/`，不手动维护另一份正文。
-- 本地工作副本在 `D:\Study\wjj_projects\active\aigc-skills`，改动直接提交到 main 并推送，不开分支，不提 PR。也可以继续在 GitHub 网页上改，改完在本地 `git pull`。
+- 改动在本地工作副本里直接提交到 main 并推送，不开分支，不提 PR。也可以在 GitHub 网页上改，改完在本地 `git pull`。
 
 本次归并的原仓库：`image-spec-check`、`storyboard-preview-skill`、`video-prompt-skill`、`image-prompt-skill`。
 
